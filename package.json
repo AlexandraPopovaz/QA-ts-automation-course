@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "author": "mchetver",
   "license": "ISC",
+  "scripts": {
+    "test": "cypress/tests/locked_out_user.spec.ts",
+    "cypress:open": "cypress open"
+  },
   "devDependencies": {
     "cypress": "^9.6.0"
-  },
-  "scripts": {
-    "cypress:open": "cypress open"
   }
 }

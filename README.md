@@ -3,7 +3,7 @@ Repository for QA-ts-automation-course Quantori 2022
 
 # Web application
 
-🧑‍🎓 Demo enviroment [saucedemo]
+🧑‍🎓 Demo environment [saucedemo]
 
 
 

@@ -1,0 +1,22 @@
+{
+  "name": "qa-ts-automation-course",
+  "version": "1.0.0",
+  "description": "Repository for QA-ts-automation-course Quantori 2022",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress:run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexandraPopovaz/QA-ts-automation-course.git"
+  },
+  "author": "Alexandra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexandraPopovaz/QA-ts-automation-course/issues"
+  },
+  "homepage": "https://github.com/AlexandraPopovaz/QA-ts-automation-course#readme",
+  "devDependencies": {
+    "cypress": "^9.6.0"
+  }
+}

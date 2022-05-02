@@ -2,5 +2,8 @@
   "name": "ts-auto-school",
   "version": "1.0.0",
   "author": "mchetver",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.6.0"
+  }
 }

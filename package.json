@@ -5,7 +5,10 @@
   "license": "ISC",
   "scripts": {
     "test": "cypress/tests/locked_out_user.spec.ts",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:runHeadlessMode": "cypress run",
+    "cypress:runHeadlessModeCertain": "cypress run --spec cypress/tests/locked_out_user.spec.js",
+    "cypress:runHeadlessChrome": "cypress run --browser chrome --spec cypress/tests/locked_out_user.spec.js"
   },
   "devDependencies": {
     "cypress": "^9.6.0"

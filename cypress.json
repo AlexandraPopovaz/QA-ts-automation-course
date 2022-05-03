@@ -1,6 +1,6 @@
 {
   "baseUrl": "https://www.saucedemo.com/",
-  "integrationFolder": "cypress/tests",
+  "integrationFolder": "cypress/integration",
   "viewportHeight": 1000,
   "viewportWidth": 1280,
   "retries": {

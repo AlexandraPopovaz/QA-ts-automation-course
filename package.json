@@ -10,6 +10,23 @@
     "cypress:runHeadlessModeCertain": "cypress run --spec cypress/tests/locked_out_user.spec.js",
     "cypress:runHeadlessChrome": "cypress run --browser chrome --spec cypress/tests/locked_out_user.spec.js"
   },
+  "name": "qa-ts-automation-course",
+  "version": "1.0.0",
+  "description": "Collaborative assignment for AQA school",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexandraPopovaz/QA-ts-automation-course.git"
+  },
+  "author": "alexandra.popova maxim.chetverikov gvantsa.shakarashvili vadim.anisimov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexandraPopovaz/QA-ts-automation-course/issues"
+  },
+  "homepage": "https://github.com/AlexandraPopovaz/QA-ts-automation-course#readme",
   "devDependencies": {
     "cypress": "^9.6.0"
   }

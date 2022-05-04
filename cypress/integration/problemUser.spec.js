@@ -9,10 +9,11 @@ describe('Problem user', function (){
         cy.get('[data-test="login-button"]').click();
     });
 
-    it('Should check ', function () {
-        // cy.get('[data-test="error"]').should("be.visible")
-        // cy.get('.error-button').click();
-        // cy.get('[data-test="username"]').clear();
-        // cy.get('[data-test="password"]').clear();
+    it('Should check correct tile view', function () {
+        cy.get('#item_4_img_link').should("to.be.visible");
+        cy.get('#item_4_title_link > .inventory_item_name').contains("Sauce Labs Backpack");
+        cy.get('#item_4_img_link').click();
+        cy.get('.inventory_details_img').should("to.be.visible");
+        cy.get('.inventory_details_name').contains("Sauce Labs Fleece Jacket");
     });
 })

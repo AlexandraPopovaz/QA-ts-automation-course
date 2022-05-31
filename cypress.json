@@ -1,3 +1,12 @@
 {
-    "chromeWebSecurity": false
+  "baseUrl": "https://www.saucedemo.com/",
+  "integrationFolder": "cypress/integration",
+  "viewportHeight": 1000,
+  "viewportWidth": 1280,
+  "retries": {
+    "runMode": 2,
+    "openMode": 1
+  },
+  "experimentalStudio": true,
+  "chromeWebSecurity": false
 }

@@ -1,4 +1,4 @@
-// auth.spec.js created with Cypress
+// checkoutUser.js created with Cypress
 //
 // Start writing your Cypress tests below!
 // If you're unfamiliar with how Cypress works,
@@ -39,7 +39,7 @@ describe('My first test', function() {
         cy.get('#checkout').click()
     })
 
-    it('will fill in fiels', function() {
+    it('will fill in fields', function() {
         login()
         cy.get('#add-to-cart-sauce-labs-bike-light').click()
         cy.get('.shopping_cart_link').click()

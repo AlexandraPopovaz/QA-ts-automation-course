@@ -8,8 +8,8 @@ import LockedOutUserPage from './../support/PageObjects/LockedOutUserPage'
             const lockedLogin = ['locked_out_user'];
             const correctPassword = ['secret_sauce'];
             cy.visit('https://www.saucedemo.com/');
-            lockedOutPage.getLockedLogin().type(`${lockedLogin}`);
-            lockedOutPage.getCorrectPassword().type(`${correctPassword}`);
+            lockedOutPage.getLockedLogin().type(`${lockedLogin}`).clear().blur();
+            lockedOutPage.getCorrectPassword().type(`${correctPassword}`).clear().blur();
             lockedOutPage.getLoginButton().click();
         });
 

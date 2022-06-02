@@ -1,5 +1,6 @@
 
 class LockedOutUserPage{
+
     getLockedLogin(){
         return cy.get('[data-test="username"]');
     }

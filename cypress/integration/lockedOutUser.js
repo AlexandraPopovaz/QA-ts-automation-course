@@ -10,7 +10,7 @@ import LockedOutUserPage from './../support/PageObjects/LockedOutUserPage'
             cy.visit('https://www.saucedemo.com/');
             lockedOutPage.getLockedLogin().type(`${lockedLogin}`);
             lockedOutPage.getCorrectPassword().type(`${correctPassword}`);
-            cy.get('[data-test="login-button"]').click();
+            lockedOutPage.getLoginButton().click();
         });
 
         it('Should check cant login locked user', function () {

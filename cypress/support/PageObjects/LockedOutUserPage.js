@@ -6,6 +6,9 @@ class LockedOutUserPage{
     getCorrectPassword(){
         return cy.get('[data-test="password"]');
     }
+    getLoginButton(){
+        return cy.get('[data-test="login-button"]');
+    }
     getErrorText(){
         return cy.get('[data-test="error"]');
     }

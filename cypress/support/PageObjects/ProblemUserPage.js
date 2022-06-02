@@ -19,8 +19,6 @@ class ProblemUserPage{
     getInventoryDetailsName(){
         return cy.get('.inventory_details_name');
     }
-
-
 }
 
 export default ProblemUserPage

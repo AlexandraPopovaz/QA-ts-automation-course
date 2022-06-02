@@ -20,9 +20,7 @@ describe('Problem user', function (){
             inventoryTitleName: "",
             inventoryDetailsName : "Sauce Labs Fleece Jacket"
         }
-        // cy.get('#item_4_img_link').should("to.be.visible");
         problemUserPage.getImageTitle().should("to.be.visible");
-        // cy.get('#item_4_title_link > .inventory_item_name')
         problemUserPage.getTitleText()
             .should("be.visible")
             .and("contain.text", title.inventoryTitleName)

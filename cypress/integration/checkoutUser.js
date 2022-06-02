@@ -4,6 +4,12 @@
 // If you're unfamiliar with how Cypress works,
 // check out the link below and learn how to write your first test:
 // https://on.cypress.io/writing-first-test
+import CheckoutStepTwoPage from './../support/PageObjects/CheckoutStepTwoPage';
+
+// Creating Object for LockedOutUserPage
+const checkoutStepTwoPage = new CheckoutStepTwoPage();
+
+
 function login() {
     cy.visit('https://www.saucedemo.com/')
     cy.get('#user-name').type('standard_user')
@@ -41,19 +47,17 @@ describe('My first test', function() {
 
     it('will fill in fields', function() {
         login()
-        cy.get('#add-to-cart-sauce-labs-bike-light').click()
-        cy.get('.shopping_cart_link').click()
-        cy.get('#checkout').click()
-        cy.get('#first-name').type('Gvantsa')
-        cy.get('#last-name').type('Shak')
-        cy.get('#postal-code').type('1400')
-        cy.get('#continue').click()
-        cy.get('#finish').click()
+        checkoutStepTwoPage.getAddToCard().click()
+        checkoutStepTwoPage.getShoppingCardButton().click()
+        checkoutStepTwoPage.getCheckoutButton().click()
+        checkoutStepTwoPage.getFirstName().type('Gvantsa')
+        checkoutStepTwoPage.getLastName().type('Shak')
+        checkoutStepTwoPage.getPostalCode().type('1400')
+        checkoutStepTwoPage.getContinueButton().click()
+        checkoutStepTwoPage.getFinishButton().click()
     })
 
     it('Checks text of the button', function() {
-        cy.get('#back-to-products').should('have.text', 'Back Home')
+        checkoutStepTwoPage.getBackHomeText().should('have.text', 'Back Home')
     })
-
-
 })

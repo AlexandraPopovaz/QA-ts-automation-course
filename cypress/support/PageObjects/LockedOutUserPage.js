@@ -1,16 +1,22 @@
 
 class LockedOutUserPage{
+    getLockedLogin(){
+        return cy.get('[data-test="username"]');
+    }
+    getCorrectPassword(){
+        return cy.get('[data-test="password"]');
+    }
     getErrorText(){
-        return ('[data-test="error"]');
+        return cy.get('[data-test="error"]');
     }
     getClickErrorButton(){
-        return ('.error-button');
+        return cy.get('.error-button');
     }
     getClearUserName(){
-        return ('[data-test="username"]');
+        return cy.get('[data-test="username"]');
     }
     getClearPasswordName(){
-        return ('[data-test="password"]');
+        return cy.get('[data-test="password"]');
     }
 }
 

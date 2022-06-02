@@ -1,12 +1,18 @@
+import LockedOutUserPage from './../support/PageObjects/LockedOutUserPage';
+import ProblemUserPage from './../support/PageObjects/ProblemUserPage';
+
+// Creating Object for LockedOutUserPage
+const lockedOutPage = new LockedOutUserPage();
+const problemUserPage = new ProblemUserPage();
 
 describe('Problem user', function (){
     before(function (){
         const correctLogin = ['problem_user'];
         const correctPassword = ['secret_sauce'];
         cy.visit('https://www.saucedemo.com/');
-        cy.get('[data-test="username"]').type(`${correctLogin}`);
-        cy.get('[data-test="password"]').type(`${correctPassword}`);
-        cy.get('[data-test="login-button"]').click();
+        problemUserPage.getCorrectLogin().type(`${correctLogin}`);
+        lockedOutPage.getCorrectPassword().type(`${correctPassword}`);
+        lockedOutPage.getLoginButton().click();
     });
 
     it('Should check correct tile view', function () {
@@ -14,13 +20,15 @@ describe('Problem user', function (){
             inventoryTitleName: "",
             inventoryDetailsName : "Sauce Labs Fleece Jacket"
         }
-        cy.get('#item_4_img_link').should("to.be.visible");
-        cy.get('#item_4_title_link > .inventory_item_name')
+        // cy.get('#item_4_img_link').should("to.be.visible");
+        problemUserPage.getImageTitle().should("to.be.visible");
+        // cy.get('#item_4_title_link > .inventory_item_name')
+        problemUserPage.getTitleText()
             .should("be.visible")
             .and("contain.text", title.inventoryTitleName)
-        cy.get('#item_4_img_link').click();
-        cy.get('.inventory_details_img').should("to.be.visible")
-        cy.get('.inventory_details_name')
+        problemUserPage.getImageTitle().click();
+        problemUserPage.getInventoryImage().should("to.be.visible")
+        problemUserPage.getInventoryDetailsName()
             .should("be.visible")
             .and("contain.text", title.inventoryDetailsName)
 

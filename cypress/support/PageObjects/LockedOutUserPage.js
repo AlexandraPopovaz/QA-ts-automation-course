@@ -1,6 +1,9 @@
 
 class LockedOutUserPage{
-
+    /*
+     login credentials should be removed and moved
+      to authorization Page Object
+     */
     getLockedLogin(){
         return cy.get('[data-test="username"]');
     }

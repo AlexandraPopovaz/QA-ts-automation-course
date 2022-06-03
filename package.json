@@ -5,7 +5,6 @@
   "bugs": {
     "url": "https://github.com/AlexandraPopovaz/QA-ts-automation-course/issues"
   },
-
   "scripts": {
     "test": "npx cypress open",
     "cypress:open": "cypress open",
@@ -14,7 +13,7 @@
     "cypress:runHeadlessChrome": "cypress run --browser chrome --spec cypress/integration/lockedOutUser.spec.js"
   },
   "devDependencies": {
-    "cypress": "^9.6.0"
+    "cypress": "^9.7.0"
   },
   "name": "qa-ts-automation-course",
   "version": "1.0.0",

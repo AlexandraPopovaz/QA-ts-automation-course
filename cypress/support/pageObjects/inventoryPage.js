@@ -1,9 +1,8 @@
 var inventoryItem = require('../../models/inventoryItem.json');
 
-export let pageItems = [];
-
 export class InventoryPage {
-    static getItems() {
+    static wrapItems() {
+        let pageItems = [];
         let amountOfItems = this.getAmountOfItems();
         console.log('amountOfItems', amountOfItems);
         for (let i = 1; i <= amountOfItems; i++) {
@@ -27,7 +26,7 @@ export class InventoryPage {
                 .invoke('text')
                 .then((price) => {
                     cy.wrap(price).as('price');
-                    itemJson['price'] = price;
+                    itemJson['price'] = price.slice(1);
                 });
             cy.get(`.inventory_list > :nth-child(${i})> .inventory_item_description>.inventory_item_label > .inventory_item_desc`)
                 .invoke('text')
@@ -38,26 +37,52 @@ export class InventoryPage {
 
             pageItems.push(itemJson);
         }
-        console.log('pageItems', pageItems);
         cy.wrap(pageItems).as('pageItems');
         return cy.get('@pageItems');
     }
+
     static getAmountOfItems() {
         return Object.keys(cy.get('.inventory_list').children()).length + 1;
     }
+
     static printItems() {
-        this.getItems().then((pageItems) => {
+        this.wrapItems().then((pageItems) => {
             cy.log(pageItems);
         });
     }
-    static selectItem() {}
-    static addItemToCart() {}
-    static removeItemFromCart() {}
-    static getAmountOfItemsinCart() {}
+
+    static AddToCart(selector) {
+        selector = selector.toLowerCase();
+        let amountOfSpaceSymbols = selector.split(' ').length - 1;
+        while (amountOfSpaceSymbols) {
+            selector = selector.replace(' ', '-');
+            amountOfSpaceSymbols -= 1;
+        }
+        selector = 'add-to-cart-' + selector;
+        return cy.getBySel(selector).click();
+    }
+
+    static removeFromCart(selector) {
+        selector = selector.toLowerCase();
+        let amountOfSpaceSymbols = selector.split(' ').length - 1;
+        while (amountOfSpaceSymbols) {
+            selector = selector.replace(' ', '-');
+            amountOfSpaceSymbols -= 1;
+        }
+        selector = 'remove-' + selector;
+        return cy.getBySel(selector).click();
+    }
+    static printAmountOfItemsInCart() {
+        cy.get('#shopping_cart_container > a > span')
+            .invoke('text')
+            .then((text) => {
+                cy.log('Amount of items in cart: ', text);
+            });
+    }
     static sortItems(order) {
         cy.getBySel('product_sort_container').select(order);
     }
-    static openSideMenu() {}
-    static selectOptionFromSideMenu() {}
-    static selectSocialMedia() {}
+    static goToCart() {
+        cy.get('#shopping_cart_container > a').click();
+    }
 }

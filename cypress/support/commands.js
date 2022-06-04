@@ -79,7 +79,7 @@ Cypress.Commands.add('InventoryCheckSorting', (order) => {
                     arrayToCompare.push(item.price);
                 });
                 //Sorting in ascending price order
-                arrayToCompare.sort().sort(function (a, b) {
+                arrayToCompare.sort(function (a, b) {
                     return a - b;
                 });
                 //Comparing results
@@ -95,7 +95,7 @@ Cypress.Commands.add('InventoryCheckSorting', (order) => {
                     arrayToCompare.push(item.price);
                 });
                 //Sorting in descending price order
-                arrayToCompare.sort().sort(function (a, b) {
+                arrayToCompare.sort(function (a, b) {
                     return b - a;
                 });
                 //Comparing results

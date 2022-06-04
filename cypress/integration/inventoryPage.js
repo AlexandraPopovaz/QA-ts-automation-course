@@ -32,7 +32,7 @@ describe('sorting tests', function () {
         cy.InventoryWrapItems();
         cy.InventoryCheckSorting('Price (high to low)');
     });
-    //Examples of other page functionality
+    //Examples of InventoryPageObject functionality
     it('should test InventoryPage object functionality', function () {
         cy.InventoryAddToCart('Sauce Labs Backpack');
         cy.InventoryAddToCart('Sauce Labs Fleece Jacket');

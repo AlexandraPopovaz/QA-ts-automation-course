@@ -5,13 +5,12 @@ describe('consumersCart', function () {
   let password='secret_sauce'
 it('Add one item to the cart', () => {
   const loginPage = new LoginPage();
-//LoginPage.openPage()
   
   loginPage.openPage()
-  loginPage.enterUserName().type(username);
-  loginPage.enterPassword().type(password);
+  loginPage.userName().type(username);
+  loginPage.password().type(password);
 
-  loginPage.clickLoginButton().click();
+  loginPage.loginButton().click();
 
   cy.get('#add-to-cart-sauce-labs-backpack').click()
   cy.get('#shopping_cart_container').click()

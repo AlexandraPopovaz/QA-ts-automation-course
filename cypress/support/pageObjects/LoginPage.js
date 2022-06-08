@@ -5,16 +5,23 @@ class LoginPage {
         cy.visit('https://www.saucedemo.com/');
     }
 
-    enterUserName() {
+    username() {
         return cy.get('[data-test="username"]');
     }
 
-    enterPassword() {
+    password() {
         return cy.get('[data-test="password"]');
     }
 
-    clickLoginButton() {
+    loginButton() {
         return cy.get('#login-button');
     }
+
+    signIn(username, password) {
+        this.username().type(username);
+        this.password().type(password);
+        this.loginButton().click();
+    }
+
 }
 export default LoginPage

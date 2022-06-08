@@ -1,36 +1,43 @@
-class CheckoutCompletePage{
-    getAddToCard(){
+class CheckoutCompletePage {
+    constructor() {
+    }
+    addToCartButton() {
         return cy.get('#add-to-cart-sauce-labs-backpack');
     }
-    getShoppingCardButton(){
+    shoppingCartButton() {
         return cy.get('#shopping_cart_container');
     };
 
-    getCheckoutButton(){
+    checkoutButton() {
         return cy.get('#checkout');
     }
-    getFirstName(){
+    firstName() {
         return cy.get('#first-name');
     }
-    getLastName(){
+    lastName() {
         return cy.get('#last-name');
     }
-    getPostalCode(){
+    postalCode() {
         return cy.get('#postal-code');
     }
-    getContinueButton(){
+    continueButton() {
         return cy.get('#continue');
     }
-    getFinishButton(){
+    finishButton() {
         return cy.get('#finish');
     }
-    getBackHomeButton (){
-        return cy.get('#back-to-products');
+
+    buyProduct(firstName, lastName, postalCode) {
+
+        this.checkoutButton().click()
+        this.firstName().type(firstName)
+        this.lastName().type(lastName)
+        this.postalCode().type(postalCode)
+        this.continueButton().click()
     }
-    getShoppingCardButton(){
-        return cy.get('#shopping_cart_container');
-    };
-    
+    checkoutCompleteContainer() {
+        return cy.get('#checkout_complete_container');
+    }
 }
 
 export default CheckoutCompletePage 

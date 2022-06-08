@@ -11,13 +11,13 @@ class CheckoutCompletePage {
     checkoutButton() {
         return cy.get('#checkout');
     }
-    firstName() {
+    firstNameInput() {
         return cy.get('#first-name');
     }
-    lastName() {
+    lastNameInput() {
         return cy.get('#last-name');
     }
-    postalCode() {
+    postalCodeInput() {
         return cy.get('#postal-code');
     }
     continueButton() {
@@ -30,9 +30,9 @@ class CheckoutCompletePage {
     buyProduct(firstName, lastName, postalCode) {
 
         this.checkoutButton().click()
-        this.firstName().type(firstName)
-        this.lastName().type(lastName)
-        this.postalCode().type(postalCode)
+        this.firstNameInput().type(firstName)
+        this.lastNameInput().type(lastName)
+        this.postalCodeInput().type(postalCode)
         this.continueButton().click()
     }
     checkoutCompleteContainer() {

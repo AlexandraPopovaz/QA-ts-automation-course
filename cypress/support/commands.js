@@ -1,5 +1,5 @@
 import {LoginPage} from './pageObjects/loginPage';
-import {InventoryPage} from './pageObjects/inventoryPage';
+import {Inventory} from './pageObjects/inventoryPage';
 
 Cypress.Commands.add('getBySel', (selector, ...args) => {
     return cy.get(`[data-test=${selector}]`, ...args);
@@ -12,97 +12,71 @@ Cypress.Commands.add('login', (username, password) => {
     LoginPage.clickLoginButton();
 });
 
-Cypress.Commands.add('InventorySortItems', (order) => {
-    InventoryPage.sortItems(order);
+Cypress.Commands.add('inventorySortItems', (order) => {
+    Inventory.sortItems(order);
 });
 
-Cypress.Commands.add('InventoryWrapItems', (order) => {
-    InventoryPage.wrapItems(order);
+Cypress.Commands.add('inventoryPrepareItems', (order) => {
+    Inventory.prepareItems(order);
 });
 
-Cypress.Commands.add('InventoryAddToCart', (selector) => {
-    InventoryPage.AddToCart(selector);
+Cypress.Commands.add('inventoryAddToCart', (selector) => {
+    Inventory.AddToCart(selector);
 });
 
-Cypress.Commands.add('InventoryRemoveFromCart', (selector) => {
-    InventoryPage.removeFromCart(selector);
+Cypress.Commands.add('inventoryRemoveFromCart', (selector) => {
+    Inventory.removeFromCart(selector);
 });
 
-Cypress.Commands.add('InventoryGoToCart', () => {
-    InventoryPage.goToCart();
+Cypress.Commands.add('inventoryGoToCart', () => {
+    Inventory.goToCart();
 });
 
-Cypress.Commands.add('InventoryPrintAmountOfItemsInCart', () => {
-    InventoryPage.printAmountOfItemsInCart();
+Cypress.Commands.add('inventoryPrintAmountOfItemsInCart', () => {
+    Inventory.printAmountOfItemsInCart();
 });
 
-Cypress.Commands.add('InventoryPrintItems', () => {
-    InventoryPage.printItems();
+Cypress.Commands.add('inventoryPrintItems', () => {
+    Inventory.printItems();
 });
 
-Cypress.Commands.add('InventoryCheckSorting', (order) => {
+Cypress.Commands.add('inventoryCheckSorting', (order, property) => {
     const items = [];
     const arrayToCompare = [];
-    switch (order) {
-        case 'Name (A to Z)':
-            cy.get('@pageItems').then((pageItems) => {
-                pageItems.forEach((item) => {
-                    items.push(item.name);
-                    arrayToCompare.push(item.name);
-                });
-                //Sorting in ascending alpabetical order
-                arrayToCompare.sort();
-                //Comparing results
-                for (let i = 0; i < Object.keys(arrayToCompare).length; i++) {
-                    expect(items[i]).to.be.equal(arrayToCompare[i]);
-                }
-            });
-            break;
-        case 'Name (Z to A)':
-            cy.get('@pageItems').then((pageItems) => {
-                pageItems.forEach((item) => {
-                    items.push(item.name);
-                    arrayToCompare.push(item.name);
-                });
-                //Sorting in descending alpabetical order
-                arrayToCompare.sort().reverse();
-                //Comparing results
-                for (let i = 0; i < Object.keys(arrayToCompare).length; i++) {
-                    expect(items[i]).to.be.equal(arrayToCompare[i]);
-                }
-            });
-            break;
-        case 'Price (low to high)':
-            cy.get('@pageItems').then((pageItems) => {
-                pageItems.forEach((item) => {
-                    items.push(item.price);
-                    arrayToCompare.push(item.price);
-                });
-                //Sorting in ascending price order
-                arrayToCompare.sort(function (a, b) {
-                    return a - b;
-                });
-                //Comparing results
-                for (let i = 0; i < Object.keys(arrayToCompare).length; i++) {
-                    expect(items[i]).to.be.equal(arrayToCompare[i]);
-                }
-            });
-            break;
-        case 'Price (high to low)':
-            cy.get('@pageItems').then((pageItems) => {
-                pageItems.forEach((item) => {
-                    items.push(item.price);
-                    arrayToCompare.push(item.price);
-                });
-                //Sorting in descending price order
-                arrayToCompare.sort(function (a, b) {
-                    return b - a;
-                });
-                //Comparing results
-                for (let i = 0; i < Object.keys(arrayToCompare).length; i++) {
-                    expect(items[i]).to.be.equal(arrayToCompare[i]);
-                }
-            });
-            break;
-    }
+    cy.get('@pageItems').then((pageItems) => {
+        pageItems.forEach((item) => {
+            //Filling-in the arrays
+            items.push(item[property]);
+            arrayToCompare.push(item[property]);
+            //Sorting
+            switch (order) {
+                case 'Name (A to Z)':
+                    arrayToCompare.sort();
+                    break;
+
+                case 'Name (Z to A)':
+                    arrayToCompare.sort().reverse();
+                    break;
+
+                case 'Price (low to high)':
+                    arrayToCompare.sort(function (a, b) {
+                        return a - b;
+                    });
+                    break;
+
+                case 'Price (high to low)':
+                    arrayToCompare.sort(function (a, b) {
+                        return b - a;
+                    });
+                    break;
+                default:
+                    cy.log(order, 'Price (high to low)');
+                    throw 'Sorting order appears to be incorrect';
+            }
+            //Comparing results
+            for (let i = 0; i < Object.keys(arrayToCompare).length; i++) {
+                expect(items[i]).to.be.equal(arrayToCompare[i]);
+            }
+        });
+    });
 });

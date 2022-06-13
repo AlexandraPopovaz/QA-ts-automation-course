@@ -1,4 +1,5 @@
 import {Item} from '../../models/pageItems';
+import {inventorySelectorPrefix} from '../../models/mapping/inventory';
 
 export class InventoryItem implements Item {
     title: string;
@@ -76,7 +77,7 @@ export class Inventory {
             selector = selector.replace(' ', '-');
             amountOfSpaceSymbols -= 1;
         }
-        selector = 'add-to-cart-' + selector;
+        selector = inventorySelectorPrefix.get('Add to cart') + selector;
         return cy.getBySel(selector).click();
     }
 
@@ -87,7 +88,7 @@ export class Inventory {
             selector = selector.replace(' ', '-');
             amountOfSpaceSymbols -= 1;
         }
-        selector = 'remove-' + selector;
+        selector = inventorySelectorPrefix.get('Remove') + selector;
         return cy.getBySel(selector).click();
     }
     static printAmountOfItemsInCart() {

@@ -23,10 +23,10 @@ export class InventoryItem implements Item {
                             this.title = propertyValue;
                             const addToCartLocator = propertyValue;
                             let locatorLowerCase = addToCartLocator.toLowerCase();
-                            let amountOfSpaceSymbols = addToCartLocator.split(' ').length - 1;
-                            while (amountOfSpaceSymbols) {
+                            let numberOfSpaceSymbols = addToCartLocator.split(' ').length - 1;
+                            while (numberOfSpaceSymbols) {
                                 locatorLowerCase = locatorLowerCase.replace(' ', '-');
-                                amountOfSpaceSymbols -= 1;
+                                numberOfSpaceSymbols -= 1;
                             }
                             this.addToCartLocator = 'add-to-cart-' + locatorLowerCase;
                     }
@@ -50,13 +50,13 @@ export class Inventory {
         }
     }
 
-    static getAmountOfItems() {
+    static getnumberOfItems() {
         return Object.keys(cy.get('.inventory_list').children()).length + 1;
     }
 
     static prepareItems() {
         let pageItems = [];
-        for (let itemCounter = 1; itemCounter <= this.getAmountOfItems(); itemCounter++) {
+        for (let itemCounter = 1; itemCounter <= this.getnumberOfItems(); itemCounter++) {
             let Item = new InventoryItem().prepareItem(itemCounter);
             pageItems.push(Item);
         }
@@ -72,10 +72,10 @@ export class Inventory {
 
     static AddToCart(selector: string) {
         selector = selector.toLowerCase();
-        let amountOfSpaceSymbols = selector.split(' ').length - 1;
-        while (amountOfSpaceSymbols) {
+        let numberOfSpaceSymbols = selector.split(' ').length - 1;
+        while (numberOfSpaceSymbols) {
             selector = selector.replace(' ', '-');
-            amountOfSpaceSymbols -= 1;
+            numberOfSpaceSymbols -= 1;
         }
         selector = inventorySelectorPrefix.get('Add to cart') + selector;
         return cy.getBySel(selector).click();
@@ -83,19 +83,19 @@ export class Inventory {
 
     static removeFromCart(selector: string) {
         selector = selector.toLowerCase();
-        let amountOfSpaceSymbols = selector.split(' ').length - 1;
-        while (amountOfSpaceSymbols) {
+        let numberOfSpaceSymbols = selector.split(' ').length - 1;
+        while (numberOfSpaceSymbols) {
             selector = selector.replace(' ', '-');
-            amountOfSpaceSymbols -= 1;
+            numberOfSpaceSymbols -= 1;
         }
         selector = inventorySelectorPrefix.get('Remove') + selector;
         return cy.getBySel(selector).click();
     }
-    static printAmountOfItemsInCart() {
+    static printnumberOfItemsInCart() {
         cy.get('#shopping_cart_container > a > span')
             .invoke('text')
             .then((text) => {
-                cy.log('Amount of items in cart: ', text);
+                cy.log('number of items in cart: ', text);
             });
     }
     static sortItems(order: string) {

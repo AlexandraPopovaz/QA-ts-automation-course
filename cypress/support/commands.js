@@ -32,8 +32,8 @@ Cypress.Commands.add('inventoryGoToCart', () => {
     Inventory.goToCart();
 });
 
-Cypress.Commands.add('inventoryPrintAmountOfItemsInCart', () => {
-    Inventory.printAmountOfItemsInCart();
+Cypress.Commands.add('inventoryPrintnumberOfItemsInCart', () => {
+    Inventory.printnumberOfItemsInCart();
 });
 
 Cypress.Commands.add('inventoryPrintItems', () => {

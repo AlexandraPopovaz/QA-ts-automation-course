@@ -37,7 +37,7 @@ describe('sorting tests', function () {
     it('should test InventoryPage object functionality', function () {
         cy.inventoryAddToCart('Sauce Labs Backpack');
         cy.inventoryAddToCart('Sauce Labs Fleece Jacket');
-        cy.inventoryPrintAmountOfItemsInCart();
+        cy.inventoryPrintnumberOfItemsInCart();
         cy.inventoryRemoveFromCart('Sauce Labs Backpack');
         cy.inventoryGoToCart();
     });

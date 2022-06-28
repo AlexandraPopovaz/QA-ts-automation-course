@@ -22,6 +22,7 @@
         "url": "git+https://github.com/AlexandraPopovaz/QA-ts-automation-course.git"
     },
     "dependencies": {
+        "npm": "^8.13.1",
         "typescript": "^4.7.3"
     }
 }

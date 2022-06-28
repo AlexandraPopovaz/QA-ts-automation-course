@@ -1,4 +1,3 @@
-const {it} = require('mocha');
 const {Inventory} = require('../support/pageObjects/inventoryPage');
 
 describe('sorting tests', function () {

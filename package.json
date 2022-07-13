@@ -4,7 +4,8 @@
   "description": "Repository for QA-ts-automation-course Quantori 2022",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress:run"
+    "test": "npx cypress:run",
+    "refreshVSToken" : "vsts-npm-auth -config .npmrc"
   },
   "repository": {
     "type": "git",

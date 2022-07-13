@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 
+>>>>>>> main
 describe('Locked Out User', function (){
     before(function (){
         const lockedLogin = ['locked_out_user'];
@@ -11,9 +14,16 @@ describe('Locked Out User', function (){
 
     it('Should check cant login locked user', function () {
         cy.get('[data-test="error"]').should("be.visible")
+<<<<<<< HEAD
+=======
         // Clean form
+>>>>>>> main
         cy.get('.error-button').click();
         cy.get('[data-test="username"]').clear();
         cy.get('[data-test="password"]').clear();
     });
+<<<<<<< HEAD
 })
+=======
+})
+>>>>>>> main

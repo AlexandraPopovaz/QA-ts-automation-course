@@ -1,10 +1,32 @@
 {
+<<<<<<< HEAD
+  "name": "qa-ts-automation-course",
+  "version": "1.0.0",
+  "description": "Repository for QA-ts-automation-course Quantori 2022",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress:run",
+    "refreshVSToken" : "vsts-npm-auth -config .npmrc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexandraPopovaz/QA-ts-automation-course.git"
+  },
+  "author": "Alexandra",
+=======
   "homepage": "https://github.com/AlexandraPopovaz/QA-ts-automation-course#readme",
   "author": "alexandra.popova maxim.chetverikov gvantsa.shakarashvili vadim.anisimov",
+>>>>>>> main
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AlexandraPopovaz/QA-ts-automation-course/issues"
   },
+<<<<<<< HEAD
+  "homepage": "https://github.com/AlexandraPopovaz/QA-ts-automation-course#readme",
+  "devDependencies": {
+    "cypress": "^9.7.0",
+    "mocha": "^10.0.0"
+=======
 
   "scripts": {
     "test": "npx cypress open",
@@ -23,5 +45,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlexandraPopovaz/QA-ts-automation-course.git"
+>>>>>>> main
   }
 }

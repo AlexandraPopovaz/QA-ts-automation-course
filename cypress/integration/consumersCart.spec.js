@@ -7,7 +7,7 @@ it('Add one item to the cart', () => {
   const loginPage = new LoginPage();
   
   loginPage.openPage()
-  loginPage.username().type(username);
+  loginPage.userName().type(username);
   loginPage.password().type(password);
 
   loginPage.loginButton().click();

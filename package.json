@@ -1,4 +1,8 @@
 {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f273ccd085a41fd09e52b4bf9059377895d5f04c
   "name": "qa-ts-automation-course",
   "version": "1.0.0",
   "description": "Repository for QA-ts-automation-course Quantori 2022",
@@ -12,13 +16,48 @@
     "url": "git+https://github.com/AlexandraPopovaz/QA-ts-automation-course.git"
   },
   "author": "Alexandra",
+<<<<<<< HEAD
+=======
+=======
+  "homepage": "https://github.com/AlexandraPopovaz/QA-ts-automation-course#readme",
+  "author": "alexandra.popova maxim.chetverikov gvantsa.shakarashvili vadim.anisimov",
+>>>>>>> main
+>>>>>>> f273ccd085a41fd09e52b4bf9059377895d5f04c
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AlexandraPopovaz/QA-ts-automation-course/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/AlexandraPopovaz/QA-ts-automation-course#readme",
   "devDependencies": {
     "cypress": "^9.7.0",
     "mocha": "^10.0.0"
+=======
+<<<<<<< HEAD
+  "homepage": "https://github.com/AlexandraPopovaz/QA-ts-automation-course#readme",
+  "devDependencies": {
+    "cypress": "^9.7.0",
+    "mocha": "^10.0.0"
+=======
+
+  "scripts": {
+    "test": "npx cypress open",
+    "cypress:open": "cypress open",
+    "cypress:runHeadlessMode": "cypress run",
+    "cypress:runHeadlessModeCertain": "cypress run --spec cypress/integration/lockedOutUser.spec.js",
+    "cypress:runHeadlessChrome": "cypress run --browser chrome --spec cypress/integration/lockedOutUser.spec.js"
+  },
+  "devDependencies": {
+    "cypress": "^9.6.0"
+  },
+  "name": "qa-ts-automation-course",
+  "version": "1.0.0",
+  "description": "Collaborative assignment for AQA school",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexandraPopovaz/QA-ts-automation-course.git"
+>>>>>>> main
+>>>>>>> f273ccd085a41fd09e52b4bf9059377895d5f04c
   }
 }

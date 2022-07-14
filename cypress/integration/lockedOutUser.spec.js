@@ -1,5 +1,5 @@
-describe('Locked Out User', function (){
-    before(function (){
+describe('Locked Out User', function () {
+    before(function () {
         const lockedLogin = ['locked_out_user'];
         const correctPassword = ['secret_sauce'];
         cy.visit('https://www.saucedemo.com/');
@@ -15,4 +15,4 @@ describe('Locked Out User', function (){
         cy.get('[data-test="username"]').clear();
         cy.get('[data-test="password"]').clear();
     });
-})
+});

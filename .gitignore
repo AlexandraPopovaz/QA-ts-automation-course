@@ -23,8 +23,4 @@ cypress/screenshots
 
 build/
 dist/
-<<<<<<< HEAD
 node_modules/
-=======
-node_modules/
->>>>>>> main

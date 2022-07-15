@@ -1,6 +1,6 @@
-Cypress.Commands.add("login", (loginPage, username, password) => {
+Cypress.Commands.add("login", (loginPage, userName, password) => {
  
-    loginPage.username().type(username);
+    loginPage.userName().type(userName);
     loginPage.password().type(password);
     loginPage.loginButton().click();
 

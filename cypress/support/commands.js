@@ -1,21 +1,10 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f273ccd085a41fd09e52b4bf9059377895d5f04c
-import LoginPage from './pageObjects/loginPage';
-
-
-Cypress.Commands.add("login", (loginPage, username, password) => {
+Cypress.Commands.add("login", (loginPage, userName, password) => {
  
-    loginPage.username().type(username);
+    loginPage.userName().type(userName);
     loginPage.password().type(password);
     loginPage.loginButton().click();
 
-
 });
-<<<<<<< HEAD
-=======
-=======
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -41,5 +30,3 @@ Cypress.Commands.add("login", (loginPage, username, password) => {
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
->>>>>>> main
->>>>>>> f273ccd085a41fd09e52b4bf9059377895d5f04c

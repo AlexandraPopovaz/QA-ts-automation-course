@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-{"baseUrl": "https://www.saucedemo.com/",
-"chromeWebSecurity": false
-=======
-<<<<<<< HEAD
-{"baseUrl": "https://www.saucedemo.com/",
-"chromeWebSecurity": false
-}
-=======
 {
   "baseUrl": "https://www.saucedemo.com/",
   "integrationFolder": "cypress/integration",
@@ -18,6 +9,4 @@
   },
   "experimentalStudio": true,
   "chromeWebSecurity": false
->>>>>>> f273ccd085a41fd09e52b4bf9059377895d5f04c
 }
->>>>>>> main

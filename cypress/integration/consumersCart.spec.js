@@ -1,13 +1,13 @@
 import LoginPage from '../support/pageObjects/LoginPage';
 
 describe('consumersCart', function () {
-  let username='standard_user' 
+  let userName='standard_user' 
   let password='secret_sauce'
 it('Add one item to the cart', () => {
   const loginPage = new LoginPage();
   
   loginPage.openPage()
-  loginPage.userName().type(username);
+  loginPage.userName().type(userName);
   loginPage.password().type(password);
 
   loginPage.loginButton().click();

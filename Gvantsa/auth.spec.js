@@ -22,6 +22,10 @@ describe('My first test', function() {
 
     })
 
+    it('it will add another item in the cart', function() {
+        cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click
+    })
+
     it('checks items in the cart', function() {
         login()
         cy.get('#add-to-cart-sauce-labs-bike-light').click()
